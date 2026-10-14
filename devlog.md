@@ -9,3 +9,7 @@ I'm not quite sure yet how the driver will communicate to the logger.
 # 10-13-2026 6:35 pm
 I spent yesterday learning how to use Git which is why my day 1 devlog message is like that.  
 The instructions/rubric said not to have commits that are one liners that don't explain the project but I didn't know how to use Git yet and so my day 1 commits ended up being one liners.
+
+#10-13-2026 7:10 pm
+Today I plan to finish the logger and start on the encryption program. I'm still trying to figure out how the driver will work with the logger.
+Especially how it will send it messages using pipes and subprocesses. 
