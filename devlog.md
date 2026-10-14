@@ -13,3 +13,28 @@ The instructions/rubric said not to have commits that are one liners that don't 
 #10-13-2026 7:10 pm
 Today I plan to finish the logger and start on the encryption program. I'm still trying to figure out how the driver will work with the logger.
 Especially how it will send it messages using pipes and subprocesses. 
+
+#10-13-2026 10:04 pm
+I have finished creating the logger, but was unable to get to starting the encryption system.
+
+The logger is a program that waits for input.
+The driver sends the logger messages one line at a time, and adds a timestamp for each.
+It does this until "QUIT" is sent.
+
+**Implementation**
+I read the input from sys.argv[1]. This is how I plan to have the driver tell which log file to use.
+We read the input one line at a time.
+We split off the first word and keep the rest of the line as the message.
+We then check for QUIT, if the action is QUIT, the loop ends and we end the program. 
+I make sure not to write QUIT to the log
+*datetime.now().strftime("%Y-%m-%d %H:%M")* gives us the current date and 24 hour time.
+
+I tested the logger by running the test input given as part of the assignment, and it gave the correct output.
+
+**Problems**
+I ran into some minor problems while working on the Logger.
+I had a problem initially where typing QUIT would be written to the log as well then went ahead to correct that.
+I had a problem where using split(" ") would cause breaks on multiple spaces.
+
+**Next Session**
+For the next session, I plan to implement the Encryption program.
