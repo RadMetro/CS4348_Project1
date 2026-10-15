@@ -10,11 +10,11 @@ I'm not quite sure yet how the driver will communicate to the logger.
 I spent yesterday learning how to use Git which is why my day 1 devlog message is like that.  
 The instructions/rubric said not to have commits that are one liners that don't explain the project but I didn't know how to use Git yet and so my day 1 commits ended up being one liners.
 
-#10-13-2026 7:10 pm
+# 10-13-2026 7:10 pm
 Today I plan to finish the logger and start on the encryption program. I'm still trying to figure out how the driver will work with the logger.
 Especially how it will send it messages using pipes and subprocesses. 
 
-#10-13-2026 10:04 pm
+# 10-13-2026 10:04 pm
 I have finished creating the logger, but was unable to get to starting the encryption system.
 
 The logger is a program that waits for input.
@@ -39,7 +39,7 @@ I had a problem where using split(" ") would cause breaks on multiple spaces.
 **Next Session**
 For the next session, I plan to implement the Encryption program.
 
-#10-13-2026 9:22 pm
+# 10-14-2026 9:22 pm
 Today I plan to write the encryption program.
 
 The Encryption Program needs to read user input, one line at a time and print one line of reply for each.
@@ -51,4 +51,21 @@ The Vigenère cipher shifts the text based on a passkey.
 If they key is shorter than the message it starts over.
 It encrypts by adding each pair of numbers.
 
+# 10-15-2026 2:28 AM
+I finished the encryption program.
 
+The program reads commands from standard input per line. 
+It remembers the passkey between commands.
+To encrypt, I used the vigenere function in my function. The vigenere function uses does the cipher as I described in my previous session.
+Since encrypting adds a shift, decrypting simply removes it.
+
+I tested the code by running python encryption.py
+
+Some problems I had were forgetting to subtracting some stuff before shifting. 
+And decrypting with the wrong sign.
+
+
+For unknown commands, I reply with an ERROR unknown command message.
+I have a reply() helper than helps print on one line and flushes every time. 
+
+I'll next begin work on the Driver.
