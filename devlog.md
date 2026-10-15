@@ -69,3 +69,19 @@ For unknown commands, I reply with an ERROR unknown command message.
 I have a reply() helper than helps print on one line and flushes every time. 
 
 I'll next begin work on the Driver.
+
+
+# 10-15-2026 4:38 pm
+I'm starting work on the driver.
+The driver will be the program that the user runs.
+It will start the logger and the encryption program as child processes.
+The driver will talk to the children through pipes, but won't encrypt or write itself.
+
+Processes are isolated, so when I run a program, the OS creates a process with its own memory.
+The driver, logger, and encryption program are there different processes, so they can't see each other's variables.
+A pipe is the channel managed by the OS. Processes send messages to each other through pipes.
+
+Before diving into the implementation, I need to make sure I understand how the driver will coordinate everything. 
+Once set up, the driver needs to print a menu of commands, prompt the user, and loop until the quit command is received.
+Every command and its result must be logged, and the start and exit of the driver itself also need to be recorded.
+
