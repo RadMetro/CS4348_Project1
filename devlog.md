@@ -38,3 +38,17 @@ I had a problem where using split(" ") would cause breaks on multiple spaces.
 
 **Next Session**
 For the next session, I plan to implement the Encryption program.
+
+#10-13-2026 9:22 pm
+Today I plan to write the encryption program.
+
+The Encryption Program needs to read user input, one line at a time and print one line of reply for each.
+Each line is a command followed by an argument. The first line is the command, and the rest of the line is the argument.
+
+The driver will launch this program with subprocess, read back one line, and decide what to show the user and what to log.
+
+The Vigenère cipher shifts the text based on a passkey.
+If they key is shorter than the message it starts over.
+It encrypts by adding each pair of numbers.
+
+
