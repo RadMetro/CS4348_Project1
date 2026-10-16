@@ -85,3 +85,18 @@ Before diving into the implementation, I need to make sure I understand how the 
 Once set up, the driver needs to print a menu of commands, prompt the user, and loop until the quit command is received.
 Every command and its result must be logged, and the start and exit of the driver itself also need to be recorded.
 
+# 10-15-2026 10:26 pm
+I have completed the implementation of the driver program.
+The driver launches the logger using its script name as a command line argument.
+Both processes are initialized with stdin=PIPE and stdout=PIPE, which creates data streams over standard input and output.
+
+I chose to sperate the logic for logic selection and input handling.
+I chose not to log the raw password string when I send it to the logger.
+The driver sends QUIT to both the encryption program and the logger, followed by wait() to clean up the subprocess.
+
+If a user hits Ctrl + D, an unhandled exception could crash the driver without shutting down background processes. 
+I made sure to safely catch the EOFError and map it to a quit command.
+
+The driver handles the initialization of the logger and encryption back end using Python's subprocess module.
+I implemented a run specific history that tracks both the user inputs and encryption/decryption results.
+
